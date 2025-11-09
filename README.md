@@ -1,10 +1,16 @@
 # cmd-k
 
-A command-line tool that converts natural language prompts into shell commands.
+A command-line tool that converts natural language prompts into shell commands using OpenAI.
 
 ## Setup
 
-Add this to your `~/.bashrc` or `~/.zshrc`:
+1. Set your OpenAI API key:
+
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+2. Add this to your `~/.bashrc` or `~/.zshrc`:
 
 ```bash
 source /path/to/cmd_k/shell_setup.sh
@@ -14,12 +20,10 @@ This works with both bash and zsh.
 
 ## Usage
 
-Type your prompt and the command will be pre-filled in your terminal:
-
 ```bash
 ck list all files
-# The command "ls -la" will appear in your terminal input
-# Press Enter to execute or edit it first
+# Output: ls -la
+# The command appears in your terminal - press Enter to execute
 ```
 
 ## Development
