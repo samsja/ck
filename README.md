@@ -1,6 +1,6 @@
 # ck
 
-ck converts written instruction into executable shell commands. It's a cursor command that works from the terminal.
+ck converts written instruction into executable shell commands. It's a cursor command k that works from the terminal.
 
 ![Demo](demo.gif)
 
