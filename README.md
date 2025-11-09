@@ -1,6 +1,6 @@
-# cmd-k
+# ck
 
-cmd-k converts written instruction into executable shell commands. It's a cursor command that works from the terminal.
+ck converts written instruction into executable shell commands. It's a cursor command that works from the terminal.
 
 ![Demo](demo.gif)
 
@@ -24,12 +24,14 @@ it supports bash and zsh for now.
 
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/samsja/cmd-k/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/samsja/ck/main/install.sh | bash
 ```
 
 
 <details>
 <summary><b>Extra configuration</b></summary>
+
+config file is `~/.config/ck.toml`
 
 **OpenAI (default):**
 ```toml
