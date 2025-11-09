@@ -51,7 +51,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo -e "  ${CYAN}${BOLD}3)${NC} OpenRouter"
     echo ""
     echo -ne "${MAGENTA}Choose [1-3] (default: 1): ${NC}"
-    read provider_choice
+    read provider_choice < /dev/tty
     provider_choice=${provider_choice:-1}
 
     mkdir -p "$CONFIG_DIR"
@@ -61,10 +61,10 @@ if [ ! -f "$CONFIG_FILE" ]; then
             # OpenAI
             echo ""
             echo -ne "${MAGENTA}Enter your OpenAI API key: ${NC}"
-            read api_key
+            read api_key < /dev/tty
             echo -ne "${MAGENTA}Enter model name (default: gpt-5-nano-2025-08-07): ${NC}"
-            read model
-            model=${model:-gpt-4o-mini}
+            read model < /dev/tty
+            model=${model:-gpt-5-nano-2025-08-07}
 
             cat > "$CONFIG_FILE" << 'CONFIGEOF'
 # cmd-k configuration - OpenAI
@@ -78,9 +78,9 @@ CONFIGEOF
             # vLLM
             echo ""
             echo -ne "${MAGENTA}Enter vLLM base URL (e.g., http://localhost:8000/v1): ${NC}"
-            read base_url
+            read base_url < /dev/tty
             echo -ne "${MAGENTA}Enter model name: ${NC}"
-            read model
+            read model < /dev/tty
 
             cat > "$CONFIG_FILE" << 'CONFIGEOF'
 # cmd-k configuration - vLLM
@@ -95,9 +95,9 @@ CONFIGEOF
             # OpenRouter
             echo ""
             echo -ne "${MAGENTA}Enter your OpenRouter API key: ${NC}"
-            read api_key
-            echo -ne "${MAGENTA}Enter model name (e.g., openai/gpt-5-nano-2025-08-07): ${NC}"
-            read model
+            read api_key < /dev/tty
+            echo -ne "${MAGENTA}Enter model name (e.g., openai/gpt-4o-mini): ${NC}"
+            read model < /dev/tty
 
             cat > "$CONFIG_FILE" << 'CONFIGEOF'
 # cmd-k configuration - OpenRouter

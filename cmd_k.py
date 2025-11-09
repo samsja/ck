@@ -65,8 +65,6 @@ Examples:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt},
         ],
-        temperature=0,
-        max_tokens=100,
     )
 
     command = response.choices[0].message.content.strip()
