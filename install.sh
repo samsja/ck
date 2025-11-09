@@ -91,29 +91,45 @@ fi
 # Detect the shell
 DETECTED_SHELL=$(basename "$SHELL")
 
+# Define shell integration code
+BASH_INTEGRATION='# cmd-k shell integration for bash
+ck() {
+    local cmd=$(cmd-k "$@")
+    read -e -p "$ " -i "$cmd" final_cmd
+    if [[ -n "$final_cmd" ]]; then
+        eval "$final_cmd"
+    fi
+}'
+
+ZSH_INTEGRATION='# cmd-k shell integration for zsh
+ck() {
+    local cmd=$(cmd-k "$@")
+    print -z "$cmd"
+}'
+
 if [ "$DETECTED_SHELL" = "zsh" ]; then
     RC_FILE="~/.zshrc"
-    SHELL_EXAMPLE="shells/zsh.sh"
+    SHELL_CODE="$ZSH_INTEGRATION"
 elif [ "$DETECTED_SHELL" = "bash" ]; then
     RC_FILE="~/.bashrc"
-    SHELL_EXAMPLE="shells/bash.sh"
+    SHELL_CODE="$BASH_INTEGRATION"
 else
     echo "Warning: Could not detect shell type. Showing both examples."
     echo ""
     echo "=== For Bash (~/.bashrc) ==="
-    cat "shells/bash.sh"
+    echo "$BASH_INTEGRATION"
     echo ""
     echo "=== For Zsh (~/.zshrc) ==="
-    cat "shells/zsh.sh"
+    echo "$ZSH_INTEGRATION"
     exit 0
 fi
 
 echo "Add the following to your $RC_FILE:"
 echo ""
-cat "$SHELL_EXAMPLE"
+echo "$SHELL_CODE"
 echo ""
 echo "To add it automatically, run:"
-echo "  cat $SHELL_EXAMPLE >> $RC_FILE"
+echo "  echo '$SHELL_CODE' >> $RC_FILE"
 echo ""
 echo "Then reload your shell:"
 echo "  source $RC_FILE"
