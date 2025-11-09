@@ -1,5 +1,5 @@
 [project]
-name = "command-k"
+name = "cmd-k"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,7 +7,7 @@ requires-python = ">=3.10.13"
 dependencies = []
 
 [project.scripts]
-command-k = "command_k:main"
+cmd-k = "cmd_k:main"
 
 [tool.uv]
 package = true

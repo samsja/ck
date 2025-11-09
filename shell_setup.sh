@@ -1,6 +1,6 @@
-# Function to use command-k and pre-fill the terminal
+# Function to use cmd-k and pre-fill the terminal
 ck() {
-    local cmd=$(uv run command-k "$@")
+    local cmd=$(uv run cmd-k "$@")
 
     if [ -n "$ZSH_VERSION" ]; then
         # For zsh: use print -z to push to the editing buffer

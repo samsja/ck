@@ -1,4 +1,4 @@
-# command-k
+# cmd-k
 
 A command-line tool that converts natural language prompts into shell commands.
 
@@ -7,7 +7,7 @@ A command-line tool that converts natural language prompts into shell commands.
 Add this to your `~/.bashrc` or `~/.zshrc`:
 
 ```bash
-source /path/to/command_k/shell_setup.sh
+source /path/to/cmd_k/shell_setup.sh
 ```
 
 This works with both bash and zsh.

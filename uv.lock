@@ -3,6 +3,6 @@ revision = 3
 requires-python = ">=3.10.13"
 
 [[package]]
-name = "command-k"
+name = "cmd-k"
 version = "0.1.0"
 source = { editable = "." }
