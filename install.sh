@@ -29,7 +29,7 @@ fi
 
 # Install cmd-k globally using uv tool
 echo -e "${BLUE}→${NC} Installing cmd-k as a global tool..."
-uv tool install git+https://github.com/samsja/ck
+uv tool install git+https://github.com/samsja/cmd-k
 
 echo ""
 echo -e "${GREEN}✓ cmd-k installed successfully!${NC}"
@@ -37,7 +37,7 @@ echo ""
 
 # Create config file if it doesn't exist
 CONFIG_DIR="$HOME/.config"
-CONFIG_FILE="$CONFIG_DIR/ck.toml"
+CONFIG_FILE="$CONFIG_DIR/cmd-k.toml"
 
 if [ ! -f "$CONFIG_FILE" ]; then
     echo -e "${BOLD}Configuration Setup${NC}"
